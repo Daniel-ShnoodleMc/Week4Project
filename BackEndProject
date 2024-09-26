@@ -1,0 +1,189 @@
+package com.promineotech;
+
+import java.util.Arrays;
+
+public class BackEndProject {
+
+	public static void main(String[] args) {
+		questionBorder();
+		// 1.
+		int[] ages = new int[] {3, 9, 23, 64, 2, 8, 28, 93};
+		ages[0] -= ages[ages.length-1];
+		System.out.println(Arrays.toString(ages));
+		
+		int[] ages2 = new int[] {4, 25, 80, 66, 19, 48, 99, 31, 52};
+		ages2[0] -= ages2[ages2.length-1];
+		
+		double agesAverage = 0;
+		double ages2Average = 0;
+		
+		for (int i = 0; i < ages.length; i++) {
+			agesAverage += ages[i];
+		}
+		agesAverage = agesAverage / ages.length;
+		
+		for (int i = 0; i < ages2.length; i++) {
+			ages2Average += ages2[i];
+		}
+		
+		ages2Average = ages2Average / ages2.length;
+		System.out.println(agesAverage);
+		System.out.println(ages2Average);
+		// 2.
+		questionBorder();
+		String[] names = {"Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"};
+		double nameAverage = 0;
+		for (int i = 0; i < names.length; i++) {
+			nameAverage += names[i].length();
+		} 
+		nameAverage /= names.length;
+		System.out.println(nameAverage);
+		
+		String concats = "";
+		for (int i = 0; i < names.length; i++) {
+			concats += names[i];
+			concats += ", ";
+		}
+		System.out.println(concats);
+		
+		// 3. If you need to access the last element of an array:
+		questionBorder();
+	System.out.println("use array[array.length()-1] so it works with any length of an Array!");
+		// 4. If you need to access the first element of an array:
+	questionBorder();
+	System.out.println("use array[0] due to the 0 base counting system.");
+		// 5.
+	questionBorder();	
+	int[] nameLengths = new int[names.length];
+	
+	for (int i = 0; i < names.length; i++) {
+		nameLengths[i] = names[i].length();
+	}
+	
+		// 6.	
+	int sumOfNames = 0;
+	
+	for (int i = 0; i < nameLengths.length; i++) {
+		sumOfNames += nameLengths[i];
+	}
+	
+	System.out.println(sumOfNames);
+	
+		// 7.
+		questionBorder();
+		System.out.println(sevenMethod(8, "Apple"));
+		// 8.
+		questionBorder();
+		System.out.println(fullName("Theo", "Wall"));
+		// 9.
+		questionBorder();
+		int[] thisIsASum = {28 + 22 + 36 + 19};
+		System.out.println(greaterThanHundered(thisIsASum));
+		// 10.
+		questionBorder();
+		double[] aNewArray = {58.32, 33.50, 7.15, 35.6};
+		System.out.println(averageOfArray(aNewArray));
+		
+		// 11.
+		questionBorder();
+		double[] zeroOne = {43.4, 81.9, 9.5};
+		double[] zeroTwo = {4.6, 9.5, 71.2, 0.3};
+		System.out.println(compareThisBeach(zeroOne, zeroTwo));
+		
+		// 12.
+		questionBorder();
+		boolean hotHotHot = true;
+		double moneyPlz = 10.49;
+		System.out.println(willBuyDrink(hotHotHot, moneyPlz));
+		
+		
+		// 13.
+	questionBorder();
+	System.out.println("Because I didn't want to keep the Console all cluttered, I made a method to make a line that will separate the answers to each question!");
+		
+		// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+	}
+		// Method 7.
+		
+	static String sevenMethod(int num, String str) {
+		String sevenResult = "";
+		for (int i = 0; i < num; i++) {
+			sevenResult += str;
+		}
+		return sevenResult;
+	}
+	
+		// Method 8.
+	static String fullName(String firstName, String lastName) {
+		return firstName + " " + lastName;
+		
+	}
+	
+		// Method 9.
+	static boolean greaterThanHundered(int[] ofNums) {
+		int numNum = 0;
+		for (int i = 0; i < ofNums.length; i++) {
+			numNum += ofNums[i];
+		}
+		if (numNum > 100) {
+			boolean isSumOfNum = true;
+			return isSumOfNum;
+		} else {
+			return false;
+		}
+		
+		
+	}
+	
+	
+		// Method 10.
+static double averageOfArray(double[] doublingThis) {
+		double doubArray = 0.0;
+		for (int i = 0; i < doublingThis.length; i++) {
+			doubArray += doublingThis[i];
+		}
+		doubArray = doubArray / doublingThis.length;
+		return doubArray;
+	}
+		// Method 11.
+static boolean compareThisBeach(double[] firstOne, double[] firstTwo) {
+	double secondOne = 0.0;
+	double secondTwo = 0.0;
+	for (int i = 0; i < firstOne.length; i++) {
+		secondOne += firstOne[i];
+	}
+	secondOne = secondOne / firstOne.length;
+	
+	for (int i = 0; i < firstTwo.length; i++) {
+		secondTwo += firstTwo[i];
+	}
+	secondTwo = secondTwo / firstTwo.length;
+	
+	if (secondOne > secondTwo) {
+		return true;
+	} else {
+		return false;
+	}
+}
+	
+	
+		// Method 12.
+static boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
+	if (isHotOutside == true && moneyInPocket > 10.50) {
+		return true;
+	} else {
+		return false;
+	}
+}
+	
+	
+	
+	
+		// Method 13.
+		static String questionBorder() {
+			System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+			return null;
+		
+	}
+
+}
